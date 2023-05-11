@@ -5,8 +5,14 @@
 data/
 alignments
 baselines_models/model_checkpoints
+outputs/intermediate_outputs/
+outputs/output_scores/
 clustal/
 processed_data/
+# Slurm script outputs
+*.out
+*.err
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
