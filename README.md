@@ -10,9 +10,31 @@ Presented at the NeurIPS 2023 [Datasets and Benchmarks Track](https://neurips.cc
 conda env create --file indels_benchmark_conda.yml
 ```
 
-The dependencies will take up about X GB of space if not already installed.N
+The dependencies will take up about 4 GB of space if not already installed.
 
-TODO note on Provean
+2. Download the required preprocessed datasets:
+
+3. Install the baselines:
+- [Progen2](https://github.com/salesforce/progen/tree/main/progen2)
+- [Tranception](https://github.com/OATML-Markslab/Tranception) is included with minor changes as a subdirectory in this repo. Model checkpoints are available at TODO(Lood).
+
+### Provean
+TODO(Daniel)
+
+### HMM
+Follow the installation installation instructions in this fork of HMMER3: https://github.com/aaronkollasch/hmmer.
+TODO(Aaron) 
+
+
+### Optional:
+
+#### VEP
+If reproducing from raw files, the DDD-ASD dataset needs to be annotated with Ensembl-VEP. 
+We used version 109, the latest version at time of publication (June 2023), available at http://www.ensembl.org/info/docs/tools/vep/script/vep_download.html.
+
+Note that the installer will download a cache, and the latest version of VEP caches and FASTA files will require a lot of storage (around 20GB). To avoid having to reannotate all the variants, download the preprocessed data.
+
+
 
 ## Reproducibility, data
 
@@ -22,7 +44,7 @@ More information about the data sources and processing is provided in the Supple
 
 The `preprocessing` directory contains all code to reproduce the dataset from raw files. 
 
-These raw files are available from (TODO Marks hosted raw files) and can be downloaded using the script in TODO.
+These raw files are available from (TODO Marks hosted raw files) and can be downloaded using the script in `preprocessing/download_raw_files.sh`.
 
 Note: These raw files take up about X GB of space.
 
@@ -48,20 +70,34 @@ As an example, see `baseline_models/scoring/score_tranception.py`.
 
 We'd love new baselines for comparison - please add a pull request on GitHub.
 
-## Scoring
+## Evaluation
 
-todo
+The `stats/` directory contains scripts to evaluate models predictions - run the `stats/run_stats.sh` script to evaluate all of the baselines.
+
+The clinical datasets (ClinVar-gnomAD, and DDD-ASD) use ROC-AUC and AUPRC binary metrics to evaluate the model's predictions distinguishing pathogenic from benign variants. Critically, these metrics are across all genes (not computed within genes), as there is such a low number of variants per gene.
+
+The DMS assays have continuous outputs, so the Spearman rank correlation between the model's scores and the assay values are reported.
 
 ## Benchmark Datasets 
 ### gnomAD and ClinVar Pathogenicity Prediction 
 ### Deep Mutational Scans 
 ### DDD/ASD Developmental Disorder Prediction
+
 ## Multiple Sequence Alignments
 Tranception with Retrieval uses a Multiple Sequence Alignment (MSA) as part of its input. We generate MSAs for each 
-of our new datasets and make them available for download here (add link later). The details of how the alignments were generated are described below 
+of our new datasets and make them available for download here (add link later). The details of how the alignments were generated are described below:
 
 ### gnomAD and ClinVar 
 
 ### DMS experiments 
 
 ### DDD and ASD
+
+## Contributing
+
+We welcome new baselines (see above) as well as general improvement pull requests.
+
+## Citation
+
+Please cite this benchmark if you use it in your work:
+TODO
