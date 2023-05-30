@@ -4,14 +4,17 @@
 # data/reference_files/
 data/
 alignments
-baselines_models/model_checkpoints
+baseline_models/model_checkpoints/
 outputs/intermediate_outputs/
 outputs/output_scores/
 clustal/
 processed_data/
+# Optional:
+baseline_models/bash_scripts/old/
 # Slurm script outputs
 *.out
 *.err
+logs/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
