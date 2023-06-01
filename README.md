@@ -19,7 +19,9 @@ The dependencies will take up about 4 GB of space if not already installed.
 - [Tranception](https://github.com/OATML-Markslab/Tranception) is included with minor changes as a subdirectory in this repo. Model checkpoints are available at TODO(Lood).
 
 ### Provean
-TODO(Daniel)
+To run Provean, the Provean software must be downloaded and installed from https://www.jcvi.org/research/provean#downloads. Note
+that this also requires installing NCBI BLAST 2.4.0, CD-HIT 3.1.2 or greater, and a version 4 NCBI non-redundant protein database. In our experiments,
+we use the non-redundant database at https://ftp.ncbi.nlm.nih.gov/blast/db/v4/. Download all files labeled "nr_*" to a folder, and then extract them.
 
 ### HMM
 Follow the installation installation instructions in this fork of HMMER3: https://github.com/aaronkollasch/hmmer.

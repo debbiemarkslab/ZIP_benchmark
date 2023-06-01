@@ -1,0 +1,39 @@
+name: indels_benchmark
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+# Note: Take out some of these jupyter-specific ones
+dependencies:
+  - numpy
+  - pandas
+  - ipython
+  - ca-certificates
+  - openssl
+  - ipykernel
+  - matplotlib
+  - seaborn
+  - tqdm
+  - certifi
+  - ipywidgets
+  - biopython
+  - aiofiles
+  - tmux
+  - scikit-learn
+  - pyfaidx
+  - notebook
+  - jupyter_client[version='<8']
+  # Added from O2 marks group indels_env
+  - pytorch=1.9.1
+  - scipy=1.8
+  - seqkit
+  # Daniel and Aaron to check
+  - sentry-sdk=1.3.1
+  - pandas=1.4
+  - pip
+  - numpy=1.22
+  - pytorch=1.9.1
+  - tqdm
+  - biopython=1.78
+  - scikit-learn=1.0
+  
