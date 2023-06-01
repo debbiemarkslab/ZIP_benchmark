@@ -1,6 +1,6 @@
-# indels_benchmark
+# ZIP_benchmark
 
-Presented at the NeurIPS 2023 [Datasets and Benchmarks Track](https://neurips.cc/Conferences/2023/CallForDatasetsBenchmarks).
+Submitted to NeurIPS 2023 [Datasets and Benchmarks Track](https://neurips.cc/Conferences/2023/CallForDatasetsBenchmarks).
 
 ## Setup
 
